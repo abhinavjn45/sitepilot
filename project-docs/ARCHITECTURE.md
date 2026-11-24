@@ -36,9 +36,15 @@ Reusable agent workflows: Skills directory
 
 AI clients, prompts, site content, plugin responses, and network input are untrusted. Core authenticates and authorizes each operation, applies policy/approval requirements, records auditable events, and calls a configured connector over secure transport. The plugin independently checks WordPress user capabilities and validates the requested operation before using WordPress APIs. Secrets remain in local secure configuration/storage, not prompts or logs.
 
+The Phase 2 read-only connector exposes `GET /wp-json/sitepilot/v1/status`, `GET /wp-json/sitepilot/v1/site-info`, `GET /wp-json/sitepilot/v1/plugins`, `GET /wp-json/sitepilot/v1/themes`, `GET /wp-json/sitepilot/v1/posts`, `GET /wp-json/sitepilot/v1/pages`, `GET /wp-json/sitepilot/v1/users`, `GET /wp-json/sitepilot/v1/media`, `GET /wp-json/sitepilot/v1/comments`, `GET /wp-json/sitepilot/v1/categories`, and `GET /wp-json/sitepilot/v1/tags`. Each route requires a WordPress user with `manage_options`. Python Core exposes the corresponding read-only MCP tools; the client chooses only these fixed routes and does not accept a URL as tool input. The owner reports the original six tools are tested against the local WordPress installation. The users, media, comments, categories, and tags endpoints/tools are implemented and mock-tested in source; those plugin routes still need installation and live verification.
+
 ## Theme and builder isolation
 
 Theme changes should operate on a draft or separate working copy, validate and preview, then wait for approval before publishing. Preserve a backup and provide rollback. Builder-specific adapters own detection, version compatibility, data parsing, and safe supported mutations. No adapter may assume another builder's data model.
+
+## Development Environment
+
+Windows is the primary development environment, with VS Code as the IDE and XAMPP for local WordPress testing. SitePilot Core is planned as a local-first Python MCP server. Docker and other container dependencies are not mandatory.
 
 ## Deployment shape
 
@@ -46,5 +52,5 @@ Initial target is local Windows use without Docker. The Dashboard and CLI are op
 
 ## Future extraction
 
-The connector directory is a clear product boundary so it can become its own public repository without large restructuring. The project uses one Git repository, initialized by the owner. The repository currently has no commits; its current branch is `master` while the owner changes the default branch to `main`. The component boundaries keep the connector extractable later.
+The connector directory is a clear product boundary so it can become its own public repository without large restructuring. The project uses one Git repository. It is initialized on branch `main` with initial commit `14691ea` (`first commit`); `main` tracks `origin/main`. The component boundaries keep the connector extractable later.
 

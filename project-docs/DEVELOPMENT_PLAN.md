@@ -4,9 +4,9 @@ Roadmap is provisional and may be refined as requirements become concrete. Do no
 
 | Phase | Scope | Status |
 |---|---|---|
-| 0 | Project initialization, modular structure, documentation | In progress: documentation foundation created; Git not initialized |
-| 1 | WordPress connector plugin foundation | Not started |
-| 2 | Local MCP server foundation | Not started |
+| 0 | Project initialization, modular structure, documentation | Complete: documentation, Git setup, and environment review completed; Composer is not installed and is not required for the initial plugin foundation |
+| 1 | WordPress connector plugin foundation | Complete: status endpoint implemented and PHP syntax-checked; owner reports local installation, activation, administrator success, and unauthenticated 401 verification |
+| 2 | Local MCP server foundation | In progress: stdio-only MCP server, typed local-site configuration, restricted status client, credential-provider interface, and mocked unit tests implemented; no live WordPress request made by Core |
 | 3 | Codex and Claude Code connectivity | Not started |
 | 4 | Core WordPress management tools | Not started |
 | 5 | WP-CLI-style tool system via WordPress APIs where possible | Not started |
@@ -23,7 +23,8 @@ Roadmap is provisional and may be refined as requirements become concrete. Do no
 - [x] Inspect workspace and record Git status.
 - [x] Establish documented component boundaries and placeholder descriptions.
 - [x] Create requested project documentation and ignore rules.
-- [ ] Owner decides whether to initialize Git and make an initial commit.
-- [ ] Review/adjust assumptions before authorizing Phase 1.
+- [x] Initialize Git and create the initial commit (`14691ea`, `first commit`) on `main`, tracking `origin/main`.
+- [x] Verify the development environment (PHP, Composer availability, Python, Node.js, and local WordPress connectivity); Composer is not installed.
+- [x] Review/adjust assumptions before authorizing Phase 1.
 
-No packages are to be installed during Phase 0. No WordPress site is connected and nothing is deployed.
+At the end of Phase 0, no project packages had been installed and no WordPress site had been connected through SitePilot; nothing was deployed.

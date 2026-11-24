@@ -2,7 +2,7 @@
 
 SitePilot is a planned personal, self-hosted platform for managing one or more WordPress websites through AI assistants using the Model Context Protocol (MCP). It aims to offer independent, open-source functionality comparable in broad purpose to WordPress management assistants while keeping the owner in control of code, data, and hosting.
 
-**Project stage:** Phase 0 — foundation and documentation. No application functionality has been implemented yet.
+**Project stage:** Phase 2 — Python Core and MCP server foundation.
 
 ## Planned components
 
@@ -16,7 +16,7 @@ See [PRODUCT_VISION](project-docs/PRODUCT_VISION.md), [ARCHITECTURE](project-doc
 
 ## Development status
 
-This repository currently contains project documentation and component placeholders only. The planned features are requirements, not implemented or tested functionality. No packages are installed by this initialization.
+The WordPress plugin status endpoint is installed and activated in the local test site; the owner reports successful administrator and unauthenticated REST checks. The Python Core has read-only `site_status`, `site_info`, `list_plugins`, `list_themes`, `list_posts`, `list_pages`, `list_users`, `list_media`, `list_comments`, `list_categories`, and `list_tags` MCP tools. The owner reports the original six tools have been tested against the local WordPress site. The users, media, comments, categories, and tags tools and plugin routes are implemented and mock-tested or syntax-checked, but need installation/update and live verification before use against WordPress. The dashboard, CLI, and broader WordPress management features remain planned.
 
 ## Principles
 
@@ -29,7 +29,7 @@ This repository currently contains project documentation and component placehold
 
 ## Current setup
 
-There is no runnable application yet. For now, review the project documentation. Git was not initialized in the inspected workspace. When ready, initialize this directory as the single project repository and begin Phase 1 only after explicitly deciding to proceed.
+The local WordPress test site is available at `http://localhost/sitepilot-test/`. Git is initialized as a single project repository on branch `main`; the initial commit is `14691ea` (`first commit`), and the branch tracks `origin/main`. The Python Core dependencies are installed in the project `.venv` only.
 
 ## Documentation
 

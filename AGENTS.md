@@ -2,7 +2,7 @@
 
 ## Project context
 
-SitePilot is a long-term, local-first WordPress management platform. Read `README.md` and the relevant files in `project-docs/` before making architectural or security-sensitive changes. Current stage: Phase 0; documentation and placeholders only.
+SitePilot is a long-term, local-first WordPress management platform. Read `README.md` and the relevant files in `project-docs/` before making architectural or security-sensitive changes. Current stage: Phase 2; the WordPress plugin foundation is in place, and the Python Core foundation is being implemented.
 
 ## Working with the owner
 
@@ -49,3 +49,16 @@ SitePilot is a long-term, local-first WordPress management platform. Read `READM
 ## Documentation status language
 
 Use clear labels such as **planned**, **implemented**, and **verified**. A listed requirement is not evidence of implementation. Update `project-docs/FEATURE_STATUS.md` when status changes.
+
+## File Editing Policy
+
+- Edit existing project files directly in their original locations.
+- Prefer targeted edits and patches over rewriting entire files.
+- Do not create separate PowerShell scripts, Python scripts, temporary files, or replacement copies merely to make documentation or code changes.
+- Do not generate instructions or scripts for me to execute when you can safely perform the requested file modification directly.
+- Do not repeatedly regenerate entire documentation files when only a small section needs updating.
+- Preserve existing content and formatting unless a complete rewrite is explicitly required.
+- Create new files only when they are genuinely required by the architecture or requested feature.
+- Work within the active SitePilot workspace.
+- If a required write operation is outside the permitted workspace, request the appropriate permission rather than silently changing the file location.
+- After editing, inspect the actual modified files and report what changed.
